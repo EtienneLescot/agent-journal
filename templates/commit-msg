@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Native git commit-msg hook: the same "Request:" rule as the plugin, for any agent or harness.
+# Install in a journaled repository:
+#   mkdir -p .githooks && cp commit-msg .githooks/ && chmod +x .githooks/commit-msg
+#   git config core.hooksPath .githooks
+set -euo pipefail
+
+message_file="$1"
+
+case "$(head -n 1 "$message_file")" in
+  Merge*|Revert*) exit 0 ;;
+esac
+
+if ! grep -Eq '^Request:[[:space:]]*[^[:space:]]' "$message_file"; then
+  echo "agent-journal: add a 'Request:' line quoting the user's request in their own words." >&2
+  exit 1
+fi

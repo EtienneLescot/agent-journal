@@ -1,0 +1,10 @@
+{
+  "name": "agent-journal",
+  "version": "0.1.0",
+  "description": "The agent keeps a git journal of the documents it changes for you: one intent per commit, explorations as branches, milestones as tags. You never touch git.",
+  "author": {
+    "name": "Etienne Lescot"
+  },
+  "license": "MIT",
+  "keywords": ["git", "journal", "documents", "traceability", "project-management"]
+}

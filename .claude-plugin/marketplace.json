@@ -1,0 +1,13 @@
+{
+  "name": "agent-journal",
+  "owner": {
+    "name": "Etienne Lescot"
+  },
+  "plugins": [
+    {
+      "name": "agent-journal",
+      "source": "./plugins/agent-journal",
+      "description": "The agent keeps a git journal of the documents it changes for you: one intent per commit, explorations as branches, milestones as tags. You never touch git."
+    }
+  ]
+}
